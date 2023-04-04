@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/mainscreen"
+    android:id="@+id/parentLayout">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <ImageView
+            android:background="@drawable/menu"
+            android:layout_weight="0.40"
+            android:layout_width="0dp"
+            android:layout_gravity="start"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+            <ImageView
+                android:id="@+id/blIndicator"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_margin="6dp"
+                android:clickable="true"
+                android:src="@drawable/bluetooth_searching"
+                app:tint="@color/white"
+                android:focusable="true" />
+            <ImageView
+                android:id="@+id/wifiIndicator"
+                android:layout_margin="6dp"
+                android:src="@drawable/rss_feed"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:tint="@color/white"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="2.20"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:weightSum="5"
+            android:background="@drawable/header_rectangle"
+            android:backgroundTint="@color/black">
+            <ImageView
+                android:src="@drawable/lamp_left"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_gravity="start"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:src="@drawable/left_indicator"
+                android:layout_weight="0.9"
+                android:layout_width="0dp"
+                android:layout_gravity="start"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2"
+                android:text="E V O L V E"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+            <ImageView
+                android:src="@drawable/rit_indicator_off"
+                android:layout_weight="0.9"
+                android:layout_width="0dp"
+                android:layout_gravity="start"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:padding="20dp"
+                android:src="@drawable/lamp_ritvector"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_gravity="start"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:weightSum="2">
+            <ImageView
+                android:layout_margin="6dp"
+                android:src="@drawable/phone_iphone"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:tint="@color/white" />
+            <ImageView
+                android:id="@+id/cellularIndicator"
+                android:layout_margin="6dp"
+                android:src="@drawable/network_cell"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:tint="@color/white"/>
+        </LinearLayout>
+        <ImageView
+
+            android:id="@+id/map"
+            android:background="@drawable/map_icon"
+            android:layout_weight="0.40"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/centerAccelero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <com.viki.accelero.kdgaugeview.KdGaugeView
+            android:id="@+id/speedMeter"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="10dp"
+            app:speed_limit="75" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="180dp"
+            android:text="82"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="220dp"
+            android:text="x1000 RPM"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_below="@+id/header"
+        android:layout_marginEnd="26dp"
+        android:layout_toStartOf="@+id/centerAccelero" >
+
+        <com.viki.accelero.BatteryView
+            android:id="@+id/battery"
+            android:layout_width="174dp"
+            android:layout_height="174dp" />
+
+        <com.viki.accelero.Indicator
+            android:id="@+id/horizontalBattery"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="120dp"
+            app:batteryBg="@drawable/power_empty"
+            app:batteryOrientation="horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:text="Temp: 48.0 "
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:layout_marginTop="20dp"
+        android:gravity="end">
+
+        <ImageView
+            android:id="@+id/endRect"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/side_rect" />
+
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="20dp"
+            android:text="Range Available"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="40dp"
+            android:text="118 km"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="50dp"
+            android:text="Total Distance"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="90dp"
+            android:text="01901 km"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="110dp"
+            android:layout_marginEnd="50dp"
+            android:src="@drawable/overspeed" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/endRect"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentEnd="true">
+            <ImageView
+                android:id="@+id/eco"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:src="@drawable/eco" />
+
+            <ImageView
+                android:id="@+id/power"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/powerfixed" />        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true" />
+
+    <TextView
+        android:id="@+id/tempAndLocTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="23\u2103 Bengaluru"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp">
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Time"
+            android:id="@+id/timeTextView"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:visibility="gone"
+            android:textStyle="bold"
+            android:text="Calender"
+            android:textSize="34sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:id="@+id/calender"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:visibility="invisible"
+        android:layout_width="460dp"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="140dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="60dp"
+        android:id="@+id/callIndicator">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/dismissCall"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_weight="0.6"
+                android:src="@drawable/dismisscall" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.8"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Incoming Call"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Incoming"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/answerCall"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_weight="0.6"
+                android:src="@drawable/answercall" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

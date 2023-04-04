@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="kdgaugeview">
+        <attr name="maxSpeed" format="float"></attr>
+        <attr name="minSpeed" format="float"></attr>
+        <attr name="speed" format="float"></attr>
+        <attr name="speed_limit" format="float"></attr>
+        <attr name="animationTime" format="integer"></attr>
+        <attr name="unitOfMeasurement" format="string" ></attr>
+
+        <attr name="speedTextSize" format="dimension"></attr>
+        <attr name="unitOfMeasurementTextSize" format="dimension"></attr>
+        <attr name="speedLimitTextSize" format="dimension"></attr>
+
+        <attr name="speedDialRingWidth" format="dimension"></attr>
+        <attr name="speedDialRingInnerPadding" format="dimension"></attr>
+
+
+        <attr name="dialActiveColor" format="color"></attr>
+        <attr name="dialInactiveColor" format="color"></attr>
+        <attr name="dialSpeedColor" format="color"></attr>
+        <attr name="dialSpeedAlertColor" format="color"></attr>
+        <attr name="subDivisionCircleColor" format="color"></attr>
+        <attr name="divisionCircleColor" format="color"></attr>
+        <attr name="speedTextColor" format="color"></attr>
+        <attr name="unitOfMeasurementTextColor" format="color"></attr>
+        <attr name="speedLimitTextColor" format="color"></attr>
+
+    </declare-styleable>
+
+    <declare-styleable name="Battery">
+        <attr name="batteryOrientation">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+        <attr name="batteryBg" format="reference" />
+        <attr name="batteryColor" format="color"/>
+        <attr name="batteryPower" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="BatteryViewOriginal2">
+        <attr name="batteryBackground" format="reference" />
+        <attr name="batteryLevel" format="reference" />
+        <attr name="batteryChargeIcon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="BatteryViewCustom">
+        <attr name="border" format="dimension"/>
+        <attr name="inside_margin" format="dimension"/>
+        <attr name="radius" format="dimension"/>
+        <attr name="mainColor" format="color"/>
+        <attr name="chargingColor" format="color"/>
+        <attr name="normalColor" format="color"/>
+        <attr name="lowPowerColor" format="color"/>
+    </declare-styleable>
+
+</resources>
